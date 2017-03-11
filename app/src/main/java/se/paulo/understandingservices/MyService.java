@@ -3,7 +3,6 @@ package se.paulo.understandingservices;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
@@ -14,8 +13,8 @@ public class MyService extends Service {
 
 
     final class MyThreadClass implements Runnable {
-        int service_id;
 
+        int service_id;
 
         public MyThreadClass(int service_id) {
             this.service_id = service_id;
@@ -49,12 +48,10 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-
         Toast.makeText(this, "Starting Service..", Toast.LENGTH_LONG).show();
         Thread thread = new Thread(new MyThreadClass(startId));
         thread.start();
         return START_STICKY;
-
 
     }
 
@@ -72,4 +69,12 @@ public class MyService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
+
+
+    public void testIfServiceWorks(String text){
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+
+    }
+
+
 }

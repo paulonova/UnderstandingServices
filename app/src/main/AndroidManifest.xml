@@ -20,6 +20,11 @@
         <service android:name=".MyService">
 
         </service>
+
+        <service android:name=".MyServiceIntent"
+            android:exported="false">
+
+        </service>
     </application>
 
 </manifest>
