@@ -23,6 +23,8 @@
 
         <service android:name=".MyServiceIntent"
             android:exported="false">
+        </service>
+        <service android:name=".MyBoundService">
 
         </service>
     </application>
